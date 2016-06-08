@@ -22,7 +22,7 @@ pod "VTCameraPreviewView"
 
 ## Usage
 
-You can put view from xib and make class is this class. And set camera `isFront` or not. Done!
+You can put view from xib and make class is this class. And set camera `isFront = yes or no` . Done!
 
 Or
 
@@ -56,9 +56,6 @@ And you can change camera by one line:
     self.preview.switchCamera()
 
 ```
-
-
-Or you can 
 
 ## Author
 
