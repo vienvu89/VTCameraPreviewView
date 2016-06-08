@@ -1,0 +1,6 @@
+framework module Pods_VTCameraPreviewView_Example {
+  umbrella header "Pods-VTCameraPreviewView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

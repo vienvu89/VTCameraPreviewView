@@ -1,0 +1,16 @@
+PODS:
+  - VTCameraPreviewView (0.1.0)
+
+DEPENDENCIES:
+  - VTCameraPreviewView (from `../`)
+
+EXTERNAL SOURCES:
+  VTCameraPreviewView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  VTCameraPreviewView: 01933a7902fbf1aa7ddbd387cec3a5c8f984f3d0
+
+PODFILE CHECKSUM: aded3e38a7df2aeac75b46b8a3a5f4d6a1a24eca
+
+COCOAPODS: 1.0.1

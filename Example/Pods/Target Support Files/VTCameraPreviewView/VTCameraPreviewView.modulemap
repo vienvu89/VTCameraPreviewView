@@ -1,0 +1,6 @@
+framework module VTCameraPreviewView {
+  umbrella header "VTCameraPreviewView-umbrella.h"
+
+  export *
+  module * { export * }
+}
