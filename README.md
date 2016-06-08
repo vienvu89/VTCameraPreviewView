@@ -20,9 +20,49 @@ it, simply add the following line to your Podfile:
 pod "VTCameraPreviewView"
 ```
 
+## Usage
+
+You can put view from xib and make class is this class. And set camera `isFront` or not. Done!
+
+Or
+
+```swift
+
+
+override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view, typically from a nib.
+
+
+
+    self.preview = VTCameraPreviewView(isFront: true)
+}
+
+
+
+override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+
+     self.preview.frame = self.view.bounds
+      self.view.addSubview(preiview)
+}
+
+```
+
+And you can change camera by one line:
+
+```swift
+
+    self.preview.switchCamera()
+
+```
+
+
+Or you can 
+
 ## Author
 
-Vien Vu, lamvienbk@gmail.com
+Vien Vu
 
 ## License
 

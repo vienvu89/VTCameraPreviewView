@@ -16,8 +16,8 @@
 		E049CA0322A2FA6555A429F5AF33BB5A /* VTCameraPreviewView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 997A1A4D3CEFD4BB0E07B05BD5007D7F /* VTCameraPreviewView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E067E8C217C3C300CDDAC2E5E751B009 /* Pods-VTCameraPreviewView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569C5F3543DD388B6B3C313651F0E71 /* Pods-VTCameraPreviewView_Example-dummy.m */; };
 		E19AA2A8F008E614B7A8836A2C07E477 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		E6D2E8C750D73084A95E4FA65F33FDBB /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05929970E8A485AED9A15598DA84D2F /* ReplaceMe.swift */; };
 		FBDA469A1D080633000FACBD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDA46991D080633000FACBD /* AVFoundation.framework */; };
+		FBDA469C1D0814CA000FACBD /* VTCameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDA469B1D0814CA000FACBD /* VTCameraPreviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +61,9 @@
 		E880E2B39F50176212903506854AC37B /* Pods-VTCameraPreviewView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-VTCameraPreviewView_Tests-umbrella.h"; sourceTree = "<group>"; };
 		EC4BC1FDAB989110312BD3AACE4C33B2 /* Pods-VTCameraPreviewView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-VTCameraPreviewView_Example-resources.sh"; sourceTree = "<group>"; };
 		ECE0216FDE9267D729F2B899D5F06AB1 /* Pods-VTCameraPreviewView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-VTCameraPreviewView_Example.modulemap"; sourceTree = "<group>"; };
-		F05929970E8A485AED9A15598DA84D2F /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		F421F30C6B8C44018B5BC9DCF7C0453C /* Pods-VTCameraPreviewView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-VTCameraPreviewView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		FBDA46991D080633000FACBD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		FBDA469B1D0814CA000FACBD /* VTCameraPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VTCameraPreviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +154,7 @@
 		862154C3B0081A0FF012A717F2FEC3C0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F05929970E8A485AED9A15598DA84D2F /* ReplaceMe.swift */,
+				FBDA469B1D0814CA000FACBD /* VTCameraPreviewView.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -349,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBDA469C1D0814CA000FACBD /* VTCameraPreviewView.swift in Sources */,
 				E067E8C217C3C300CDDAC2E5E751B009 /* Pods-VTCameraPreviewView_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,7 +358,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6D2E8C750D73084A95E4FA65F33FDBB /* ReplaceMe.swift in Sources */,
 				015E455FAD09E2BF7D4F7D7C6B08F55A /* VTCameraPreviewView-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 65293B04C34615758ED1E5C79ACA1DE7 /* Pods-VTCameraPreviewView_Example.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -545,6 +546,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5EE8DD7FDF0FB796CC6F9B91B3FAE1F2 /* Pods-VTCameraPreviewView_Example.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
