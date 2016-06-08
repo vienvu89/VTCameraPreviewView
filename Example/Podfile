@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'VTCameraPreviewView_Example' do
+  pod 'VTCameraPreviewView', :path => '../'
+
+  target 'VTCameraPreviewView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
