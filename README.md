@@ -11,13 +11,15 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+Xcode 7 and iOS 8 Above
+
 ## Installation
 
 VTCameraPreviewView is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "VTCameraPreviewView"
+pod 'VTCameraPreviewView'
 ```
 
 ## Usage
