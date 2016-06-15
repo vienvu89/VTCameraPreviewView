@@ -22,6 +22,13 @@ it, simply add the following line to your Podfile:
 pod 'VTCameraPreviewView'
 ```
 
+Remember use
+
+```
+use_frameworks!
+```
+when you use pod swift.
+
 ## Usage
 
 You can put view from xib and make class is this class. And set camera `isFront = yes or no` . Done!
@@ -29,6 +36,12 @@ You can put view from xib and make class is this class. And set camera `isFront 
 Or
 
 ```swift
+
+import VTCameraPreviewView
+
+.
+.
+.
 
 
 override func viewDidLoad() {
