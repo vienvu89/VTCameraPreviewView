@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VTCameraPreviewView'
-  s.version          = '0.1.1'
+  s.version          = '0.1.3'
   s.summary          = 'A subclass of UIView. Allow you preview camera to view.'
 
 # This description is used to generate tags and improve search results.
