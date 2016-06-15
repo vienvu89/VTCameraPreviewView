@@ -1,5 +1,5 @@
 PODS:
-  - VTCameraPreviewView (0.1.0)
+  - VTCameraPreviewView (0.1.1)
 
 DEPENDENCIES:
   - VTCameraPreviewView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  VTCameraPreviewView: 01933a7902fbf1aa7ddbd387cec3a5c8f984f3d0
+  VTCameraPreviewView: e5d568fcfd24d9c5aa141f4356dc73789a083174
 
 PODFILE CHECKSUM: aded3e38a7df2aeac75b46b8a3a5f4d6a1a24eca
 

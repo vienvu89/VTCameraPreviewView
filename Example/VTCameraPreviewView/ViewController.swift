@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import VTCameraPreviewView
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var preview: VTCameraPreviewView!
     
     override func viewDidLoad() {

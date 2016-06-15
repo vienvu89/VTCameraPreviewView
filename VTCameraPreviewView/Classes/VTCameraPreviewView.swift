@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-@IBDesignable class VTCameraPreviewView: UIView {
+@IBDesignable public class VTCameraPreviewView: UIView {
     
     @IBInspectable var isFront: Bool = true {
         didSet {
@@ -32,7 +32,7 @@ import AVFoundation
         self.commonInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.commonInit()
     }
@@ -66,7 +66,7 @@ import AVFoundation
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(VTCameraPreviewView.orientationChanged(_:)), name: UIDeviceOrientationDidChangeNotification, object: nil)
     }
     
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         self.previewLayer.frame = self.bounds
     }
@@ -115,7 +115,7 @@ import AVFoundation
         self.previewLayer.connection.videoOrientation = self.avOrientationForInterfaceOrientation(UIApplication.sharedApplication().statusBarOrientation)
     }
     
-    func switchCamera() {
+    public func switchCamera() {
         session.beginConfiguration()
         
         for input in session.inputs {
