@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 
 
-@IBDesignable public class VTCameraPreviewView: UIView {
+@IBDesignable open class VTCameraPreviewView: UIView {
     
     @IBInspectable var isFront: Bool = true {
         didSet {
@@ -19,12 +19,12 @@ import AVFoundation
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    private var session: AVCaptureSession!
-    private var previewLayer: AVCaptureVideoPreviewLayer!
-    private var position: AVCaptureDevicePosition = .Front
+    fileprivate var session: AVCaptureSession!
+    fileprivate var previewLayer: AVCaptureVideoPreviewLayer!
+    fileprivate var position: AVCaptureDevicePosition = .front
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,13 +44,13 @@ import AVFoundation
         
     }
     
-    private func commonInit() {
+    fileprivate func commonInit() {
         self.session = AVCaptureSession()
         
         if isFront {
-            position = .Front
+            position = .front
         } else {
-            position = .Back
+            position = .back
         }
         self.session.sessionPreset = AVCaptureSessionPreset640x480
         
@@ -60,29 +60,29 @@ import AVFoundation
         self.previewLayer = AVCaptureVideoPreviewLayer(session: self.session)
         self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         
-        self.previewLayer.connection.videoOrientation = self.avOrientationForInterfaceOrientation(UIApplication.sharedApplication().statusBarOrientation)
+        self.previewLayer.connection.videoOrientation = self.avOrientationForInterfaceOrientation(UIApplication.shared.statusBarOrientation)
         self.layer.addSublayer(self.previewLayer)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(VTCameraPreviewView.orientationChanged(_:)), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(VTCameraPreviewView.orientationChanged(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         self.previewLayer.frame = self.bounds
     }
     
-    private func cameraWithPosition(position: AVCaptureDevicePosition) -> AVCaptureDevice? {
-        let devices = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo)
+    fileprivate func cameraWithPosition(_ position: AVCaptureDevicePosition) -> AVCaptureDevice? {
+        let devices = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo)
         
-        for device in devices {
-            if device.position == position {
+        for device in devices! {
+            if (device as AnyObject).position == position {
                 return device as? AVCaptureDevice
             }
         }
         return nil
     }
     
-    private func startInput() {
+    fileprivate func startInput() {
         let device = self.cameraWithPosition(position)
         do {
             let input = try AVCaptureDeviceInput(device: device)
@@ -95,37 +95,37 @@ import AVFoundation
         }
     }
     
-    private func avOrientationForInterfaceOrientation(orientation: UIInterfaceOrientation) -> AVCaptureVideoOrientation {
+    fileprivate func avOrientationForInterfaceOrientation(_ orientation: UIInterfaceOrientation) -> AVCaptureVideoOrientation {
         switch orientation {
-        case .Portrait:
-            return .Portrait
-        case .PortraitUpsideDown:
-            return .PortraitUpsideDown
-        case .LandscapeLeft:
-            return .LandscapeLeft
-        case .LandscapeRight:
-            return .LandscapeRight
+        case .portrait:
+            return .portrait
+        case .portraitUpsideDown:
+            return .portraitUpsideDown
+        case .landscapeLeft:
+            return .landscapeLeft
+        case .landscapeRight:
+            return .landscapeRight
         default:
-            return .Portrait
+            return .portrait
         }
         
     }
     
-    @objc private func orientationChanged(notification: AnyObject) {
-        self.previewLayer.connection.videoOrientation = self.avOrientationForInterfaceOrientation(UIApplication.sharedApplication().statusBarOrientation)
+    @objc fileprivate func orientationChanged(_ notification: AnyObject) {
+        self.previewLayer.connection.videoOrientation = self.avOrientationForInterfaceOrientation(UIApplication.shared.statusBarOrientation)
     }
     
-    public func switchCamera() {
+    open func switchCamera() {
         session.beginConfiguration()
         
         for input in session.inputs {
             session.removeInput(input as! AVCaptureInput)
         }
         
-        if position == .Front {
-            position = .Back
+        if position == .front {
+            position = .back
         } else {
-            position = .Front
+            position = .front
         }
         self.startInput()
         
